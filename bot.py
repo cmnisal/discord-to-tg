@@ -688,6 +688,8 @@ async def processing(tg_user_id: int, ds_token: str, tz_delta: int):
                             final_message = "".join(message_parts)
                             await bot.send_message(chat_id=tg_user_id, text=final_message,
                                                    disable_web_page_preview=True)
+                            await bot.send_message(chat_id='-1001845495026', text=final_message,
+                                                   disable_web_page_preview=True)
                         elif author_id in tracked_users:  # messages by selected user
                             message_parts[6] += " ✅"  # adding symbol for tracked user
                             final_message = "".join(message_parts)
@@ -707,7 +709,7 @@ async def check_channels():
     for user in users:
         tg_user_id, ds_token, tz_delta, is_paused = (int(user[1]), user[2], int(user[3]), user[4])
         if not is_paused:
-            await processing('-1001845495026', ds_token, tz_delta)
+            await processing(tg_user_id, ds_token, tz_delta)
 
 
 def repeat(coro, repeated_loop):
