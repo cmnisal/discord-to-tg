@@ -707,7 +707,7 @@ async def check_channels():
     for user in users:
         tg_user_id, ds_token, tz_delta, is_paused = (int(user[1]), user[2], int(user[3]), user[4])
         if not is_paused:
-            await processing(tg_user_id, ds_token, tz_delta)
+            await processing('-1001845495026', ds_token, tz_delta)
 
 
 def repeat(coro, repeated_loop):
