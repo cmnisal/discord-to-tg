@@ -652,14 +652,10 @@ async def processing(tg_user_id: int, ds_token: str, tz_delta: int):
                         ts_edited = (timestamp + timedelta(hours=tz_delta)).strftime("%d.%m.%Y %H:%M:%S")
                         msg_date, msg_time = ts_edited.split(" ")
 
-                        message_parts.append(f"🔥 {server_name}")
+                        message_parts.append(f"⚡  {server_name}#{channel_name}")
                         message_parts.append("\n")
-                        message_parts.append(f"⚡ {channel_name}")
+                        message_parts.append(f"@{author_username}")
                         message_parts.append("\n\n")
-                        message_parts.append(f"⏰ {msg_date} {msg_time}")
-                        message_parts.append("\n")
-                        message_parts.append(f"✉️ Message from {author_username}")
-                        message_parts.append("\n")
                         if "referenced_message" in raw_message:
                             message_parts.append("\n")
                             referenced_author_name = await get_username_on_server(ds_token, server_id,
