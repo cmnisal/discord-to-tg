@@ -690,6 +690,8 @@ async def processing(tg_user_id: int, ds_token: str, tz_delta: int):
                                                    disable_web_page_preview=True)
                             await bot.send_message(chat_id='-1001845495026', text=final_message,
                                                    disable_web_page_preview=True)
+                            await bot.send_message(chat_id='-1001646636100', text=final_message,
+                                                   disable_web_page_preview=True)
                         elif author_id in tracked_users:  # messages by selected user
                             message_parts[6] += " ✅"  # adding symbol for tracked user
                             final_message = "".join(message_parts)
