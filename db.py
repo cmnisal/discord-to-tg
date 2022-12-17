@@ -1,5 +1,7 @@
 import sqlite3
+import os 
 
+os.chdir(r'/root/rektproof/discord-to-tg')
 
 class BotDB:
 
