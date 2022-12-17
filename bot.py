@@ -12,6 +12,9 @@ from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram.types import ReplyKeyboardRemove, ReplyKeyboardMarkup, KeyboardButton
 from aiogram.utils import executor
 from db import BotDB, create_db
+import os 
+
+os.chdir(r'/root/rektproof/discord-to-tg')
 
 config = configparser.ConfigParser()
 config.read("settings.ini")
